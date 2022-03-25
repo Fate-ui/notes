@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "pinia": "^2.0.9",
+    "three": "^0.139.0",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
   "devDependencies": {
     "@types/node": "^17.0.10",
+    "@types/three": "^0.138.0",
     "@vitejs/plugin-vue": "^2.0.0",
     "autoprefixer": "^10.4.2",
     "eslint-config-prettier": "^8.3.0",

@@ -86,6 +86,11 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/three@^0.138.0":
+  version "0.138.0"
+  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.138.0.tgz#ec9f1d1fd8dffea2e0572f9d815ff5a35cf4dc6b"
+  integrity sha512-D8AoV7h2kbCfrv/DcebHOFh1WDwyus3HdooBkAwcBikXArdqnsQ38PQ85JCunnvun160oA9jz53GszF3zch3tg==
+
 "@vitejs/plugin-vue@^2.0.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-2.1.0.tgz#ddf5e0059f84f2ff649afc25ce5a59211e670542"
@@ -1318,6 +1323,11 @@ tailwindcss@^3.0.15:
     postcss-value-parser "^4.2.0"
     quick-lru "^5.1.1"
     resolve "^1.21.0"
+
+three@^0.139.0:
+  version "0.139.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.139.0.tgz#4805eeb4cde85d8a82b6048088230f8ce5b75375"
+  integrity sha512-hZ4LkCjgoEM82WLaOVptDKGpB3SkEyuJP2OHe36AFO8hS2I6CrEiNanXj7wwR3wIPT7V5wi5Y5pFnncS5SVHgQ==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
