@@ -8,6 +8,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader '
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { GUI } from 'dat.gui'
 
 let scene: THREE.Scene, camera: any, renderer: THREE.Renderer
 const threeRef = $ref<HTMLCanvasElement | null>(null)
@@ -15,6 +16,7 @@ const threeRef = $ref<HTMLCanvasElement | null>(null)
 onMounted(() => {
   init()
   render()
+  addGui()
 })
 
 function init() {
@@ -28,6 +30,7 @@ function init() {
     20
   )
   camera.position.set(-1.8, 0.6, 2.7)
+  camera.lookAt(scene.position)
   //RGBE纹理加载器
   const textureLoader: RGBELoader = new RGBELoader()
   textureLoader
@@ -74,6 +77,39 @@ function onWindowResize() {
 
 function render() {
   renderer.render(scene, camera)
+  camera.lookAt(scene.position)
+}
+
+//添加dat.gui控制器
+function addGui() {
+  const gui = new GUI()
+  //改变相机
+  const cameraFolder = gui.addFolder('Camera')
+  cameraFolder
+    .add(camera.position, 'x', -10, 10)
+    .name('positionX')
+    .onChange(render)
+  cameraFolder
+    .add(camera.position, 'y', -10, 10)
+    .name('positionY')
+    .onChange(render)
+  cameraFolder
+    .add(camera.position, 'z', -10, 10)
+    .name('positionZ')
+    .onChange(render)
+  cameraFolder
+    .add(camera.rotation, 'x', 0, Math.PI * 2)
+    .name('rotationX')
+    .onChange(render)
+  cameraFolder
+    .add(camera.rotation, 'y', 0, Math.PI * 2)
+    .name('rotationY')
+    .onChange(render)
+  cameraFolder
+    .add(camera.rotation, 'z', 0, Math.PI * 2)
+    .name('rotationZ')
+    .onChange(render)
+  cameraFolder.open()
 }
 </script>
 
