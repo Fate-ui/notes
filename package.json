@@ -32,17 +32,13 @@
     "vite": "^2.7.2",
     "vue-tsc": "^0.29.8"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**": [
       "prettier --config .prettierrc --write",
       "eslint --fix",
-      "git addd"
+      "git add"
     ]
   }
+
 
 }
