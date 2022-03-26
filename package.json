@@ -41,7 +41,7 @@
     "src/**": [
       "prettier --config .prettierrc --write",
       "eslint --fix",
-      "git ad"
+      "git addd"
     ]
   }
 
