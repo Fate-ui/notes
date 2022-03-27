@@ -2,11 +2,10 @@
   <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
 </template>
 
-<script lang="scss" setup>
-</script>
+<script lang="scss" setup></script>
 
 <style scoped>
-input[type=checkbox]{
+input[type='checkbox'] {
   height: 0;
   width: 0;
   visibility: hidden;
