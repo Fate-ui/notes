@@ -10,6 +10,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
+    "types": ["vite-plugin-svg-icons/client", "vite/client"],
     // 解析非相对模块名的基准目录
     "baseUrl": "./",
     "paths": {

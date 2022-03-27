@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
 import { useHomeStore } from '@/store/home'
-import Three from '@/baseComponents/Three/Three.vue'
+import Three from '@/baseComponents/three/Three.vue'
 
 const homeStore = useHomeStore()
 const name = homeStore.name

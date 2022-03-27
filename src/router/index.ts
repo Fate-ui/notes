@@ -3,7 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 const baseRoutes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/home'
+    component: () => import('@/view/dashboard/Dashboard.vue'),
   },
   {
     path: '/home',
