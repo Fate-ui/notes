@@ -1,8 +1,5 @@
 <template>
-  <svg
-    aria-hidden="true"
-    :style="{ width: size + 'rem', height: size + 'rem' }"
-  >
+  <svg aria-hidden="true" :style="{ width: size + 'rem', height: size + 'rem' }">
     <use :xlink:href="symbolId" sytle="fill: currentColor;" />
   </svg>
 </template>

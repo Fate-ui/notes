@@ -1,10 +1,26 @@
 <template>
-  <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+  <div class="we-switch">
+    <input ref="inputRef" type="checkbox" id="we_switch" @change="handleChange" />
+    <label for="we_switch">Toggle</label>
+  </div>
 </template>
 
-<script lang="scss" setup></script>
+<script lang="ts" setup>
+const inputRef = $ref<HTMLInputElement | null>(null)
+
+const emits = defineEmits<{
+  (e: 'change', checked: boolean): void
+}>()
+function handleChange() {
+  emits('change', inputRef!.checked)
+}
+</script>
 
 <style scoped>
+.we-switch {
+  display: inline-block;
+}
+
 input[type='checkbox'] {
   height: 0;
   width: 0;
@@ -14,8 +30,8 @@ input[type='checkbox'] {
 label {
   cursor: pointer;
   text-indent: -9999px;
-  width: 100px;
-  height: 50px;
+  width: 50px;
+  height: 25px;
   background: grey;
   display: block;
   border-radius: 50px;
@@ -25,25 +41,25 @@ label {
 label:after {
   content: '';
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 45px;
-  height: 45px;
+  top: 1px;
+  left: 1px;
+  width: 23px;
+  height: 23px;
   background: #fff;
-  border-radius: 45px;
+  border-radius: 23px;
   transition: 0.3s;
 }
 
 input:checked + label {
-  background: #bada55;
+  background: #38bdf8;
 }
 
 input:checked + label:after {
-  left: calc(100% - 3px);
+  left: calc(100% - 1px);
   transform: translateX(-100%);
 }
 
 label:active:after {
-  width: 65px;
+  width: 33px;
 }
 </style>

@@ -23,12 +23,7 @@ function init() {
   //创建场景
   scene = new THREE.Scene()
   //创建相机
-  camera = new THREE.PerspectiveCamera(
-    45,
-    window.innerWidth / window.innerHeight,
-    0.25,
-    20
-  )
+  camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20)
   camera.position.set(-1.8, 0.6, 2.7)
   camera.lookAt(scene.position)
   //RGBE纹理加载器
@@ -85,18 +80,9 @@ function addGui() {
   const gui = new GUI()
   //改变相机
   const cameraFolder = gui.addFolder('Camera')
-  cameraFolder
-    .add(camera.position, 'x', -10, 10)
-    .name('positionX')
-    .onChange(render)
-  cameraFolder
-    .add(camera.position, 'y', -10, 10)
-    .name('positionY')
-    .onChange(render)
-  cameraFolder
-    .add(camera.position, 'z', -10, 10)
-    .name('positionZ')
-    .onChange(render)
+  cameraFolder.add(camera.position, 'x', -10, 10).name('positionX').onChange(render)
+  cameraFolder.add(camera.position, 'y', -10, 10).name('positionY').onChange(render)
+  cameraFolder.add(camera.position, 'z', -10, 10).name('positionZ').onChange(render)
   cameraFolder
     .add(camera.rotation, 'x', 0, Math.PI * 2)
     .name('rotationX')
