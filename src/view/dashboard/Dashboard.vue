@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard flex h-full">
     <div
-      class="left flex flex-col justify-between grow-0 w-64 shrink-1 bg-[#f7f7f7] dark:bg-[red] h-full"
+      class="left flex flex-col justify-between grow-0 w-64 shrink-1 bg-[#f7f7f7] h-full"
       :class="{ 'w-24': folded }"
     >
       <div class="user-info">
@@ -28,16 +28,19 @@
       >
         <div v-show="showText" class="title text-xl font-bold">菜单</div>
         <ul class="menu-item pt-4">
-          <li
+          <router-link
+            custom
             v-for="item in menuItems"
-            :class="{ active: currentMenu === item.icon }"
-            @click="handleClick(item.icon)"
+            :to="item.path"
+            v-slot="{ navigate, isActive }"
           >
-            <div class="icon">
-              <svg-icon :name="item.icon" :size="1.5"></svg-icon>
-            </div>
-            <span v-show="showText" class="category">{{ item.name }}</span>
-          </li>
+            <li @click="navigate" :class="{ active: isActive }">
+              <div class="icon">
+                <svg-icon :name="item.icon" :size="1.5"></svg-icon>
+              </div>
+              <span v-show="showText" class="category">{{ item.name }}</span>
+            </li>
+          </router-link>
         </ul>
       </div>
       <div class="bottom flex flex-col h-32">
