@@ -20,6 +20,9 @@ app.use(
     locale: {
       defaultLocale: 'zhHans',
       messages: { zhHans }
+    },
+    theme: {
+      defaultTheme: 'dark'
     }
   })
 )

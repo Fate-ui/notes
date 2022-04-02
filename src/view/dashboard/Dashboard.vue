@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard flex h-full">
     <div
-      class="left flex flex-col justify-between grow-0 w-64 shrink-1 bg-[#f7f7f7] h-full"
+      class="left flex flex-col justify-between w-64 shrink-0 bg-[#f7f7f7] h-full"
       :class="{ 'w-24': folded }"
     >
       <div class="user-info">
@@ -36,9 +36,9 @@
           >
             <li @click="navigate" :class="{ active: isActive }">
               <div class="icon">
-                <svg-icon :name="item.icon" :size="1.5"></svg-icon>
+                <svg-icon :name="item.meta.icon" :size="1.5"></svg-icon>
               </div>
-              <span v-show="showText" class="category">{{ item.name }}</span>
+              <span v-show="showText" class="category">{{ item.meta.title }}</span>
             </li>
           </router-link>
         </ul>
@@ -58,60 +58,20 @@
         </div>
       </div>
     </div>
-    <div class="right grow shrink-1 bg-indigo-300 h-full"></div>
+    <router-view class="right grow shrink-1 bg-indigo-300 h-full overflow-hidden"></router-view>
   </div>
 </template>
 
 <script lang="ts" setup>
-import WeSwitch from '@/weComponents/weSwitch/WeSwitch.vue'
+import WeSwitch from '@/baseComponents/weSwitch/WeSwitch.vue'
+import { baseRoutes } from '@/router'
+import { RouteRecordRaw } from 'vue-router'
 
-//icons文件下图标名称
-type Icon = 'home' | 'share' | 'project' | 'exchange' | 'resource' | 'about'
-
-interface IMenuItem {
-  name: string
-  icon: Icon
-  path: string
-}
 //菜单项配置
-const menuItems: IMenuItem[] = [
-  {
-    name: '首页',
-    icon: 'home',
-    path: '/'
-  },
-  {
-    name: '个人分享',
-    icon: 'share',
-    path: '/share'
-  },
-  {
-    name: '项目',
-    icon: 'project',
-    path: '/project'
-  },
-  {
-    name: '技术交流',
-    icon: 'exchange',
-    path: '/exchange'
-  },
-  {
-    name: '资源下载',
-    icon: 'resource',
-    path: '/resource'
-  },
-  {
-    name: '关于',
-    icon: 'about',
-    path: '/about'
-  }
-]
-
-//点击菜单项
-const currentMenu = ref<Icon>('home')
-function handleClick(item: Icon) {
-  currentMenu.value = item
-}
+const menuItems: RouteRecordRaw[] = []
+baseRoutes.map((route) => {
+  route.children && menuItems.push(route.children[0])
+})
 
 onMounted(() => {
   // document.documentElement.classList.add('dark')

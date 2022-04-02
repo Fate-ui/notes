@@ -1,6 +1,5 @@
 <template>
   <div class="home h-full bg-sky-300">
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
     <Three></Three>
   </div>
 </template>

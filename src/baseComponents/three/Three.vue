@@ -76,8 +76,9 @@ function render() {
 }
 
 //添加dat.gui控制器
+let gui: GUI
 function addGui() {
-  const gui = new GUI()
+  gui = new GUI()
   //改变相机
   const cameraFolder = gui.addFolder('Camera')
   cameraFolder.add(camera.position, 'x', -10, 10).name('positionX').onChange(render)
@@ -97,6 +98,10 @@ function addGui() {
     .onChange(render)
   cameraFolder.open()
 }
+
+onUnmounted(() => {
+  gui.destroy()
+})
 </script>
 
 <style lang="scss" scoped></style>

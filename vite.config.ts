@@ -37,6 +37,10 @@ export default defineConfig({
     }),
     //自动导入组件
     Components({
+      // relative paths to the directory to search for components.
+      dirs: ['src/baseComponents'],
+      // auto import for directives
+      directives: true,
       dts: true,
       resolvers: [Vuetify3Resolver()]
     })
