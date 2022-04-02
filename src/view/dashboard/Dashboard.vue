@@ -63,7 +63,6 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
 import WeSwitch from '@/weComponents/weSwitch/WeSwitch.vue'
 
 //icons文件下图标名称

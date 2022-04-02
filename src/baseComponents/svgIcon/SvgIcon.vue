@@ -29,5 +29,6 @@ const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 svg {
   display: inline-block;
   fill: currentColor;
+  flex-shrink: 0;
 }
 </style>
