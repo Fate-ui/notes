@@ -25,5 +25,5 @@
     "auto-imports.d.ts",
     "components.d.ts"
   ],
-  "exclude": ["node_modules", "dist", "**/*.js"]
+  "exclude": ["node_modules", "dist", "**/*.js", "**/*.svg"]
 }
