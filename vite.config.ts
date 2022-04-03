@@ -1,3 +1,4 @@
+import vuetify from '@vuetify/vite-plugin'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
@@ -12,6 +13,10 @@ export default defineConfig({
   plugins: [
     vue({
       reactivityTransform: true
+    }),
+    // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+    vuetify({
+      autoImport: true
     }),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹

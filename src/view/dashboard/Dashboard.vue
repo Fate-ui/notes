@@ -58,7 +58,20 @@
         </div>
       </div>
     </div>
-    <router-view class="right grow shrink-1 bg-indigo-300 h-full overflow-hidden"></router-view>
+    <div class="right relative grow shrink-1 bg-indigo-300 h-full overflow-hidden">
+      <v-icon :icon="mdiAccount" />
+      <div class="search-bar sticky top-0 inset-x-0 h-16 bg-sky-300">
+        <v-input
+          :messages="['Messages']"
+          hide-details
+          :append-icon="mdiClose"
+          :prepend-icon="mdiPhone"
+        >
+          Default Slot
+        </v-input>
+      </div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -66,6 +79,7 @@
 import WeSwitch from '@/baseComponents/weSwitch/WeSwitch.vue'
 import { baseRoutes } from '@/router'
 import { RouteRecordRaw } from 'vue-router'
+import { mdiAccount, mdiClose, mdiPhone } from '@mdi/js'
 
 //菜单项配置
 const menuItems: RouteRecordRaw[] = []
