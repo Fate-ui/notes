@@ -50,6 +50,7 @@ export default defineConfig({
       resolvers: [Vuetify3Resolver()]
     })
   ],
+  define: { 'process.env': {} },
   resolve: {
     alias: {
       '@': resolve('src')
