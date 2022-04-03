@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Dashboard from '@/view/dashboard/Dashboard.vue'
+import Dashboard from '@/views/dashboard/Dashboard.vue'
 
 export const baseRoutes: RouteRecordRaw[] = [
   {
@@ -12,7 +12,7 @@ export const baseRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: '/home',
-        component: () => import('@/view/home/Home.vue'),
+        component: () => import('@/views/home/Home.vue'),
         meta: { title: '首页', icon: 'home' }
       }
     ]
@@ -23,7 +23,7 @@ export const baseRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: '/share',
-        component: () => import('@/view/share/Share.vue'),
+        component: () => import('@/views/share/Share.vue'),
         meta: { title: '分享', icon: 'share' }
       }
     ]
@@ -34,7 +34,7 @@ export const baseRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: '/project',
-        component: () => import('@/view/project/Project.vue'),
+        component: () => import('@/views/project/Project.vue'),
         meta: { title: '项目', icon: 'project' }
       }
     ]
@@ -45,7 +45,7 @@ export const baseRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: '/interflow',
-        component: () => import('@/view/interflow/Interflow.vue'),
+        component: () => import('@/views/interflow/Interflow.vue'),
         meta: { title: '技术交流', icon: 'interflow' }
       }
     ]
@@ -56,7 +56,7 @@ export const baseRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: '/resource',
-        component: () => import('@/view/resource/Resource.vue'),
+        component: () => import('@/views/resource/Resource.vue'),
         meta: { title: '资源下载', icon: 'resource' }
       }
     ]
@@ -67,7 +67,7 @@ export const baseRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: '/about',
-        component: () => import('@/view/about/About.vue'),
+        component: () => import('@/views/about/About.vue'),
         meta: { title: '关于', icon: 'about' }
       }
     ]
