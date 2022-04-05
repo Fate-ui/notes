@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from './router'
-import vuetify from './plugins/vuetify'
+import { vuetify } from './plugins/vuetify'
 import { createPinia } from 'pinia'
-import '@/style/index.scss'
+import '@/styles/index.scss'
 //注册svg-icon
 import 'virtual:svg-icons-register'
 import SvgIcon from '@/baseComponents/svgIcon/SvgIcon.vue'

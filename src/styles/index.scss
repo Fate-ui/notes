@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  -webkit-font-smoothing: antialiased;
+}
 #app {
+  display: flex;
   height: 100vh;
   overflow: hidden;
   color: #a3a3a3;

@@ -8,69 +8,33 @@ export const baseRoutes: RouteRecordRaw[] = [
   },
   {
     path: '/home',
-    component: Dashboard,
-    children: [
-      {
-        path: '/home',
-        component: () => import('@/views/home/Home.vue'),
-        meta: { title: '首页', icon: 'home' }
-      }
-    ]
+    component: () => import('@/views/home/Home.vue'),
+    meta: { title: '首页', icon: 'home' }
   },
   {
     path: '/share',
-    component: Dashboard,
-    children: [
-      {
-        path: '/share',
-        component: () => import('@/views/share/Share.vue'),
-        meta: { title: '分享', icon: 'share' }
-      }
-    ]
+    component: () => import('@/views/share/Share.vue'),
+    meta: { title: '分享', icon: 'share' }
   },
   {
     path: '/project',
-    component: Dashboard,
-    children: [
-      {
-        path: '/project',
-        component: () => import('@/views/project/Project.vue'),
-        meta: { title: '项目', icon: 'project' }
-      }
-    ]
+    component: () => import('@/views/project/Project.vue'),
+    meta: { title: '项目', icon: 'project' }
   },
   {
     path: '/interflow',
-    component: Dashboard,
-    children: [
-      {
-        path: '/interflow',
-        component: () => import('@/views/interflow/Interflow.vue'),
-        meta: { title: '技术交流', icon: 'interflow' }
-      }
-    ]
+    component: () => import('@/views/interflow/Interflow.vue'),
+    meta: { title: '技术交流', icon: 'interflow' }
   },
   {
     path: '/resource',
-    component: Dashboard,
-    children: [
-      {
-        path: '/resource',
-        component: () => import('@/views/resource/Resource.vue'),
-        meta: { title: '资源下载', icon: 'resource' }
-      }
-    ]
+    component: () => import('@/views/resource/Resource.vue'),
+    meta: { title: '资源下载', icon: 'resource' }
   },
   {
     path: '/about',
-    component: Dashboard,
-    children: [
-      {
-        path: '/about',
-        component: () => import('@/views/about/About.vue'),
-        meta: { title: '关于', icon: 'about' }
-      }
-    ]
+    component: () => import('@/views/about/About.vue'),
+    meta: { title: '关于', icon: 'about' }
   }
 ]
 export const router = createRouter({
