@@ -15,7 +15,7 @@
       <div class="avatar"></div>
     </div>
     <div
-      class="position-fixed top-0 flex align-center w-full h-24 bg-slate-50 p-8 ml-1 z-10"
+      class="fixed top-0 flex align-center w-full h-24 bg-slate-50 p-8 ml-1 z-10"
       :class="[showFixedSearchBar ? 'block' : 'hidden']"
     >
       <div class="search-input w-96">

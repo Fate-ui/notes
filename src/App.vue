@@ -6,10 +6,10 @@
       :showFixedSearchBar="showFixedSearchBar"
       class="bg-slate-200 z-10"
     ></SearchBar>
-    <router-view class="grow" v-slot="{ Component }">
+    <router-view :key="key" class="grow" v-slot="{ Component, route }">
       <transition name="fade-transform" mode="out-in">
         <keep-alive>
-          <component :is="Component" />
+          <component :key="route.path" :is="Component" />
         </keep-alive>
       </transition>
     </router-view>
@@ -23,6 +23,8 @@ import SearchBar from '@/baseComponents/searchBar/SearchBar.vue'
 import Footer from '@/baseComponents/footer/Footer.vue'
 
 const showFixedSearchBar = ref(false)
+const route = useRoute()
+const key = computed(() => route.path)
 //监听滚动
 function handleScroll(e: any) {
   const scrollTop = e.target.scrollTop

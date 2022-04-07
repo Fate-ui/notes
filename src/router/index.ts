@@ -1,10 +1,16 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Dashboard from '@/views/dashboard/Dashboard.vue'
-
-export const baseRoutes: RouteRecordRaw[] = [
+type route = RouteRecordRaw & { hide?: boolean }
+export const baseRoutes: route[] = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/home',
+    hide: true
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    hide: true,
+    component: () => import('@/views/NotFound.vue')
   },
   {
     path: '/home',

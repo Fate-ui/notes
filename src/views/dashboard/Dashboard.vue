@@ -35,9 +35,9 @@
         >
           <li @click="navigate" :class="{ active: isActive }">
             <div class="icon">
-              <svg-icon :name="item.meta.icon" :size="1.5"></svg-icon>
+              <svg-icon :name="item.meta?.icon" :size="1.5"></svg-icon>
             </div>
-            <span v-show="showText" class="category">{{ item.meta.title }}</span>
+            <span v-show="showText" class="category">{{ item.meta?.title }}</span>
           </li>
         </router-link>
       </ul>
@@ -65,7 +65,7 @@ import { baseRoutes } from '@/router'
 import { RouteRecordRaw } from 'vue-router'
 
 //菜单项配置
-const menuItems: RouteRecordRaw[] = baseRoutes.filter((route) => route.component)
+const menuItems: RouteRecordRaw[] = baseRoutes.filter((route) => !route.hide)
 
 onMounted(() => {
   // document.documentElement.classList.add('dark')

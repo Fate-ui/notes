@@ -15,7 +15,7 @@
     <div class="module-data text-black">
       <div class="title leading-[8rem] text-2xl font-bold">模块数据</div>
       <div class="content h-64 grid grid-cols-4 grid-rows-1 gap-x-6">
-        <div class="data position-relative">
+        <div class="data relative">
           <div class="total-views">
             <div class="text-4xl font-bold">15251</div>
             <span class="text-sm">总访问量</span>
@@ -24,7 +24,7 @@
             <div class="text-4xl font-bold">28</div>
             <span class="text-sm">今日访问量</span>
           </div>
-          <div class="social position-absolute bottom-0 flex">
+          <div class="social absolute bottom-0 flex">
             <div
               class="icon border-slate-600 hover:border-[#22bf58] hover:bg-[#22bf58] hover:text-white"
             >

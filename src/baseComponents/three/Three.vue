@@ -100,6 +100,7 @@ function addGui() {
 }
 
 onUnmounted(() => {
+  console.log('unmounted')
   gui.destroy()
 })
 </script>
