@@ -37,37 +37,33 @@
             </a>
           </div>
         </div>
-        <v-hover v-slot="{ isHovering, props }" close-delay="200">
+        <v-hover v-for="i in 3" v-slot="{ isHovering, props }" close-delay="200">
           <v-card
             :elevation="isHovering ? 16 : 2"
+            class="h-72 !rounded-2xl"
             :class="{ 'on-hover': isHovering }"
             v-bind="props"
           >
-            <v-card-text class="font-weight-medium mt-12 text-center text-subtitle-1">
-              Close Delay (Mouse leave)
-            </v-card-text>
-          </v-card>
-        </v-hover>
-        <v-hover v-slot="{ isHovering, props }" close-delay="200">
-          <v-card
-            :elevation="isHovering ? 16 : 2"
-            :class="{ 'on-hover': isHovering }"
-            v-bind="props"
-          >
-            <v-card-text class="font-weight-medium mt-12 text-center text-subtitle-1">
-              Close Delay (Mouse leave)
-            </v-card-text>
-          </v-card>
-        </v-hover>
-        <v-hover v-slot="{ isHovering, props }" close-delay="200">
-          <v-card
-            :elevation="isHovering ? 16 : 2"
-            :class="{ 'on-hover': isHovering }"
-            v-bind="props"
-          >
-            <v-card-text class="font-weight-medium mt-12 text-center text-subtitle-1">
-              Close Delay (Mouse leave)
-            </v-card-text>
+            <div class="flex flex-col justify-between h-full p-4">
+              <v-card-title class="flex justify-between text-white">
+                <div class="shrink-0 grid place-items-center w-12 h-12 rounded-lg bg-emerald-500">
+                  <SvgIcon name="homeShare" :size="2"></SvgIcon>
+                </div>
+                <span class="text-2xl text-emerald-500">77</span>
+              </v-card-title>
+              <v-card-title>
+                <span class="font-bold">个人分享</span>
+              </v-card-title>
+              <v-card-subtitle class="">我的日常记录，平时所想、记录旅游、摄影…</v-card-subtitle>
+              <v-card-actions class="flex flex-row-reverse !items-end">
+                <v-btn
+                  type="primary"
+                  class="!bg-emerald-400"
+                  color="white"
+                  :icon="mdiArrowRightBold"
+                ></v-btn>
+              </v-card-actions>
+            </div>
           </v-card>
         </v-hover>
       </div>
@@ -77,6 +73,7 @@
 
 <script lang="ts" setup>
 import { useHomeStore } from '@/store/home'
+import { mdiArrowRightBold } from '@mdi/js'
 
 const homeStore = useHomeStore()
 const name = homeStore.name
