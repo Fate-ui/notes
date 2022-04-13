@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dashboard flex w-64 flex-col justify-between shrink-0 bg-slate-50"
+    class="dashboard flex w-64 flex-col justify-between shrink-0 bg-slate-100"
     :class="{ 'w-24': folded }"
   >
     <div class="user-info">
