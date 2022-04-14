@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-import { mdiMagnify } from '@mdi/js'
+// import { mdiMagnify } from '@mdi/js'
 
 const { showFixedSearchBar = false } = defineProps<{
   showFixedSearchBar: boolean

@@ -1,5 +1,5 @@
 <template>
-  <div class="home px-8 h-full">
+  <div class="home px-8">
     <v-carousel class="rounded-xl" height="400" hide-delimiters progress="primary">
       <v-carousel-item
         v-for="(slide, i) in ['First', 'Second', 'Third', 'Fourth', 'Fifth']"
