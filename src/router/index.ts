@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-type route = RouteRecordRaw & { hide?: boolean }
-export const baseRoutes: route[] = [
+import { notesRoutes } from '@/router/notes'
+export type Route = RouteRecordRaw & { hide?: boolean }
+export const baseRoutes: Route[] = [
   {
     path: '/',
     redirect: '/home',
@@ -45,5 +46,5 @@ export const baseRoutes: route[] = [
 ]
 export const router = createRouter({
   history: createWebHistory(),
-  routes: baseRoutes
+  routes: [...baseRoutes, ...notesRoutes]
 })

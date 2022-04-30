@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dashboard flex w-64 flex-col justify-between shrink-0 bg-slate-100"
+    class="dashboard flex w-64 flex-col justify-between shrink-0 bg-slate-100 text-[#a3a3a3]"
     :class="{ 'w-24': folded }"
   >
     <div class="user-info">
@@ -26,26 +26,33 @@
       :class="[folded ? 'flex justify-center' : 'px-8']"
     >
       <div v-show="showText" class="title text-xl font-bold">菜单</div>
-      <ul class="menu-item pt-4">
+      <ul class="menu-item pt-4 text-[#A3A3A3FF]">
         <router-link
           custom
           v-for="item in menuItems"
           :to="item.path"
           v-slot="{ navigate, isActive }"
         >
-          <li @click="navigate" :class="{ active: isActive }">
-            <div class="icon">
+          <li
+            @click="navigate"
+            :class="{ active: isActive }"
+            class="flex items-center h-12 cursor-pointer"
+          >
+            <div class="icon inline-grid place-items-center w-8 h-8 mr-4 rounded-xl">
               <svg-icon :name="item.meta?.icon" :size="1.5"></svg-icon>
             </div>
-            <span v-show="showText" class="category">{{ item.meta?.title }}</span>
+            <span v-show="showText" class="font-bold">{{ item.meta?.title }}</span>
           </li>
         </router-link>
       </ul>
     </div>
     <div class="bottom flex flex-col h-32">
-      <div class="switch pb-4 text-center">
-        <WeSwitch class="px-4" @change="handleChange"></WeSwitch>
-        <span v-show="showText">深夜模式</span>
+      <div class="flex justify-center items-center switch pb-4 text-center">
+        <label class="toggle-theme-btn">
+          <input @change="handleChange" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span v-show="showText" class="ml-3">切换主题</span>
       </div>
       <div class="fold grow grid place-items-center">
         <svg-icon
@@ -96,38 +103,22 @@ function handleFold() {
   transition: width 0.3s ease-out;
 }
 .menu-item {
-  color: rgb(163 163 163);
-
   li {
-    display: flex;
-    align-items: center;
-    height: 3rem;
-    cursor: pointer;
-
     &.active {
       color: #fff;
-
       .icon {
         background-color: rgb(56 189 248);
         box-shadow: inset 4px 4px 8px #34aee4, inset -4px -4px 8px #3cccff;
       }
-
-      .category {
+      span {
         color: #000;
-        font-weight: bold;
       }
     }
   }
 
   .icon {
-    display: inline-grid;
-    place-items: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.7rem;
     background-color: #f7f7f7;
     box-shadow: 4px 4px 8px #e3e3e3, -4px -4px 8px #ffffff;
-    margin-right: 1rem;
   }
 }
 .bottom {
