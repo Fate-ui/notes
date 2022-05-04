@@ -58,5 +58,9 @@ export default defineConfig({
     alias: {
       '@': resolve('src')
     }
+  },
+  server: {
+    //其他设备能访问
+    host: '0.0.0.0'
   }
 })

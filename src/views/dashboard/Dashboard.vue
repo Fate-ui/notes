@@ -67,7 +67,6 @@
 </template>
 
 <script lang="ts" setup>
-import WeSwitch from '@/baseComponents/weSwitch/WeSwitch.vue'
 import { baseRoutes } from '@/router'
 import { RouteRecordRaw } from 'vue-router'
 
